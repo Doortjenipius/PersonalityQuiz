@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5049EE9A2199A0FC0087AE9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EE992199A0FC0087AE9F /* AppDelegate.swift */; };
-		5049EE9C2199A0FC0087AE9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EE9B2199A0FC0087AE9F /* ViewController.swift */; };
+		5049EE9C2199A0FC0087AE9F /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EE9B2199A0FC0087AE9F /* IntroductionViewController.swift */; };
 		5049EE9F2199A0FD0087AE9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5049EE9D2199A0FD0087AE9F /* Main.storyboard */; };
 		5049EEA12199A1010087AE9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5049EEA02199A1010087AE9F /* Assets.xcassets */; };
 		5049EEA42199A1010087AE9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5049EEA22199A1010087AE9F /* LaunchScreen.storyboard */; };
 		5049EEAF2199A1010087AE9F /* PersonalityQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EEAE2199A1010087AE9F /* PersonalityQuizTests.swift */; };
 		5049EEBA2199A1010087AE9F /* PersonalityQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EEB92199A1010087AE9F /* PersonalityQuizUITests.swift */; };
+		5049EEC8219B09E70087AE9F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EEC7219B09E70087AE9F /* QuestionViewController.swift */; };
+		5049EECA219B0A070087AE9F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EEC9219B0A070087AE9F /* ResultsViewController.swift */; };
+		5049EECC219B13900087AE9F /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049EECB219B13900087AE9F /* QuestionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		5049EE962199A0FC0087AE9F /* PersonalityQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalityQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5049EE992199A0FC0087AE9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5049EE9B2199A0FC0087AE9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5049EE9B2199A0FC0087AE9F /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		5049EE9E2199A0FD0087AE9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5049EEA02199A1010087AE9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5049EEA32199A1010087AE9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		5049EEB52199A1010087AE9F /* PersonalityQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalityQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5049EEB92199A1010087AE9F /* PersonalityQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityQuizUITests.swift; sourceTree = "<group>"; };
 		5049EEBB2199A1010087AE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5049EEC7219B09E70087AE9F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		5049EEC9219B0A070087AE9F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		5049EECB219B13900087AE9F /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				5049EE992199A0FC0087AE9F /* AppDelegate.swift */,
-				5049EE9B2199A0FC0087AE9F /* ViewController.swift */,
+				5049EECB219B13900087AE9F /* QuestionData.swift */,
+				5049EE9B2199A0FC0087AE9F /* IntroductionViewController.swift */,
 				5049EE9D2199A0FD0087AE9F /* Main.storyboard */,
+				5049EEC7219B09E70087AE9F /* QuestionViewController.swift */,
+				5049EEC9219B0A070087AE9F /* ResultsViewController.swift */,
 				5049EEA02199A1010087AE9F /* Assets.xcassets */,
 				5049EEA22199A1010087AE9F /* LaunchScreen.storyboard */,
 				5049EEA52199A1010087AE9F /* Info.plist */,
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5049EE9C2199A0FC0087AE9F /* ViewController.swift in Sources */,
+				5049EE9C2199A0FC0087AE9F /* IntroductionViewController.swift in Sources */,
 				5049EE9A2199A0FC0087AE9F /* AppDelegate.swift in Sources */,
+				5049EECC219B13900087AE9F /* QuestionData.swift in Sources */,
+				5049EEC8219B09E70087AE9F /* QuestionViewController.swift in Sources */,
+				5049EECA219B0A070087AE9F /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +444,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KAFJAV3SW;
 				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PeronalityQuiz.PersonalityQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +464,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KAFJAV3SW;
 				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PeronalityQuiz.PersonalityQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
