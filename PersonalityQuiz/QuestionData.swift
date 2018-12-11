@@ -8,24 +8,29 @@
 
 import Foundation
 
+
 struct Question {
     var text: String
     var type: ResponseType
     var answers: [Answer]
 }
 
+// soorten vragen.
 enum ResponseType {
-    case single, multiple, ranged
+    case single, multiple, ranged, image
 }
 
+// String voor de gebruiker die gekoppeld is aan het type. Zo kan een antwoord gekoppeld worden aan een Mealtype. 
 struct Answer {
     var text: String
     var type: Mealtype
 }
 
 enum Mealtype: String {
+    // de 4 cases waar tussen kan worden gekozen.
     case burger = "🍔", taco = "🌮", salad = "🥗", pizza = "🍕"
 
+    // variable met switch statement. Hij switcht tussen de 4 opties. De juiste data voor de juiste uitkomst verschijnt in de laatste view.
     var definition: String {
         switch self {
         case .burger:
