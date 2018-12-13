@@ -11,10 +11,10 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     
-    // Outlets voor alle labels, buttons en stackviews. Deze zijn aangemaakt zodat er mee gewerkt en ge-edit kan worden.
+// Outlets voor alle labels, buttons en stackviews. Deze zijn aangemaakt zodat er mee gewerkt en ge-edit kan worden.
     @IBOutlet weak var questionLabel: UILabel!
     
-    // Single vragen.
+// Single vragen.
     @IBOutlet weak var singleStackView: UIStackView!
     
     @IBOutlet weak var singleButton1: UIButton!
@@ -22,7 +22,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var singleButton3: UIButton!
     @IBOutlet weak var singleButton4: UIButton!
     
-    // Multiple vragen.
+// Multiple vragen.
     @IBOutlet weak var multipleStackView: UIStackView!
     
     @IBOutlet weak var multiLabel1: UILabel!
@@ -37,7 +37,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var multiSwitch4: UISwitch!
     
     @IBOutlet weak var multiSubmitButton: UIButton!
-    // Ranged vragen.
+// Ranged vragen.
     @IBOutlet weak var rangedStackView: UIStackView!
     
     @IBOutlet weak var rangedLabel1: UILabel!
@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var rangedSlider: UISlider!
     @IBOutlet weak var rangedSubmitButton: UIButton!
     
-    // Single Image vragen.
+// Single Image vragen.
     @IBOutlet weak var imageStackView: UIStackView!
     @IBOutlet weak var singleImage1: UIButton!
     @IBOutlet weak var singleImage2: UIButton!
@@ -56,14 +56,14 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var questionProgressView: UIProgressView!
     
-    // telt het aantal vragen.
+// telt het aantal vragen.
     var questionIndex = 0
-    // De vragen in de quiz.
+// De vragen in de quiz.
     var questions: [Question] = [
         Question(text: "What's your favorite place to eat?",
-                 // type vraag, in dit geval single.
+// type vraag, in dit geval single.
                  type:.single,
-                 // de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
+// de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
                  answers:[
                     Answer(text: "On the couch", type: .pizza),
                     Answer(text: "In a restaurant", type: .taco),
@@ -71,9 +71,9 @@ class QuestionViewController: UIViewController {
                     Answer(text: "Outside, in a park", type: .salad)
                             ]),
         Question(text: "You love...",
-                 // type vraag, in dit geval multiple.
+// type vraag, in dit geval multiple.
                  type:.multiple,
-                 // de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
+// de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
                  answers: [
                     Answer(text: "Christmas season", type: .taco),
                     Answer(text: "Netflix and Chill", type: .pizza),
@@ -81,9 +81,9 @@ class QuestionViewController: UIViewController {
                     Answer(text: "A good party", type: .burger)
             ]),
         Question(text: "How important is healty food for you?",
-                 // type vraag, in dit geval ranged.
+// type vraag, in dit geval ranged.
                  type:.ranged,
-                // de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
+// de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
                  answers: [
                     Answer(text: "Not at all", type: .pizza),
                     Answer(text: "A bit", type: .burger),
@@ -91,9 +91,9 @@ class QuestionViewController: UIViewController {
                     Answer(text: "I'm a health freak ", type: .salad)
             ]),
         Question(text: "Your dream house looks like..  ",
-                 // type vraag, in dit geval een image en een button met tekst.
+// type vraag, in dit geval een image en een button met tekst.
             type:.image,
-            // de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
+// de mogelijke aantwoorden en aan welk type eten ze zijn gekoppeld.
             answers: [
                 Answer(text: "", type: .pizza),
                 Answer(text: "", type: .burger),
@@ -106,9 +106,9 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        // Verstopt de backbutton, zodat je niet terug kan naar een vraag die al beantwoordt is.
+// Verstopt de backbutton, zodat je niet terug kan naar een vraag die al beantwoordt is.
         navigationItem.hidesBackButton = true
-        // radius van de labels.
+// radius van de labels.
         
         singleButton1.layer.cornerRadius = 5.0
         singleButton2.layer.cornerRadius = 5.0
@@ -119,26 +119,26 @@ class QuestionViewController: UIViewController {
 
 
     }
-    // verantwoordelijk voor het laten zien van de juiste stack view.
+// verantwoordelijk voor het laten zien van de juiste stack view.
     func updateUI(){
-        // in eerste instantie zijn alle stackviews verborgen, tenzij ze worden aangeroepen.
+// in eerste instantie zijn alle stackviews verborgen, tenzij ze worden aangeroepen.
         singleStackView.isHidden = true
         multipleStackView.isHidden = true
         rangedStackView.isHidden = true
         imageStackView.isHidden = true
         
-        // welke vragen en antwoorden er moeten worden geladen.
+// welke vragen en antwoorden er moeten worden geladen.
         let currentQuestion = questions[questionIndex]
         let currentAnswers = currentQuestion.answers
         let totalProgress = Float(questionIndex) /
             Float(questions.count)
         
-        // Vragen label en question number.
+// Vragen label en question number.
         navigationItem.title = "Question number \(questionIndex + 1)"
         questionLabel.text = currentQuestion.text
         questionProgressView.setProgress(totalProgress, animated: true)
     
-        // Switch statement om te wisselen tussen de 3 vragen.
+// Switch statement om te wisselen tussen de 3 vragen.
         switch currentQuestion.type {
         case .single:
             updateSingleStack(using: currentAnswers)
@@ -151,7 +151,7 @@ class QuestionViewController: UIViewController {
         }
 }
     
-    // Zodra de single vraag wordt aangeroepen wordt de stackview weergegeven. In de stackview worden de juiste titels aan de buttons gegeven.
+// Zodra de single vraag wordt aangeroepen wordt de stackview weergegeven. In de stackview worden de juiste titels aan de buttons gegeven.
     func updateSingleStack(using answers: [Answer]) {
         singleStackView.isHidden = false
         singleButton1.setTitle(answers[0].text, for: .normal)
@@ -159,7 +159,7 @@ class QuestionViewController: UIViewController {
         singleButton3.setTitle(answers[2].text, for: .normal)
         singleButton4.setTitle(answers[3].text, for: .normal)
     }
-    // Zodra de multiple vraag wordt aangeroepen wordt de stackview weergegeven. In de stackview worden de switches ook weergegeven en krijgen de labels van de switches de juiste titels.
+// Zodra de multiple vraag wordt aangeroepen wordt de stackview weergegeven. In de stackview worden de switches ook weergegeven en krijgen de labels van de switches de juiste titels.
     func updateMultipleStack(using answers: [Answer]) {
         multipleStackView.isHidden = false
         multiSwitch1.isOn = false
@@ -171,7 +171,7 @@ class QuestionViewController: UIViewController {
         multiLabel3.text = answers[2].text
         multiLabel4.text = answers[3].text
     }
-    // Zodra de ranged vraag wordt aangeroepen wordt de stackview weergegeven. De labels aan de range krijgen ook de juiste titels.
+// Zodra de ranged vraag wordt aangeroepen wordt de stackview weergegeven. De labels aan de range krijgen ook de juiste titels.
     func updateRangedStack(using answers: [Answer]) {
         rangedStackView.isHidden = false
         rangedSlider.setValue(0.5, animated: false)
@@ -179,7 +179,7 @@ class QuestionViewController: UIViewController {
         rangedLabel2.text = answers.last?.text
     }
     
-    // Zodra de Image vraag wordt aangeroepen wordt de stackview weergegeven.
+// Zodra de Image vraag wordt aangeroepen wordt de stackview weergegeven.
     func updateImageStack(using answers: [Answer]) {
         imageStackView.isHidden = false
         singleImage1.setTitle(answers[3].text, for: .normal)
@@ -188,15 +188,15 @@ class QuestionViewController: UIViewController {
         singleImage4.setTitle(answers[2].text, for: .normal)
     }
 
-    // property waarin de Answers worden opgeslagen.
+// property waarin de Answers worden opgeslagen.
     var answersChosen: [Answer] = []
     
 
-    // Single answer button code:
+// Single answer button code:
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         let currentAnswers = questions[questionIndex].answers
     
-    // Geeft aan welke button de actie aangeroepen heeft. Zo kan de button die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
+// Geeft aan welke button de actie aangeroepen heeft. Zo kan de button die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
         switch sender {
         case singleButton1:
             answersChosen.append(currentAnswers[0])
@@ -209,15 +209,15 @@ class QuestionViewController: UIViewController {
         default:
             break
     }
-    // Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
+// Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
     nextQuestion()
 }
 
-    // Multiple answer button code:
+// Multiple answer button code:
     @IBAction func multipleAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].answers
     
-    // Geeft aan welke slides worden geactiveerd. Zo kunnen de slides die gekozen zijn gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
+// Geeft aan welke slides worden geactiveerd. Zo kunnen de slides die gekozen zijn gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
         if multiSwitch1.isOn {
             answersChosen.append(currentAnswers[0])
         }
@@ -239,19 +239,19 @@ class QuestionViewController: UIViewController {
 
     @IBAction func rangedAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].answers
-    // Geeft aan in welke range een antwoord gekozen is. Zo kan de range die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
+// Geeft aan in welke range een antwoord gekozen is. Zo kan de range die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
         let index = Int(round(rangedSlider.value *
             Float(currentAnswers.count - 1)))
         
         answersChosen.append(currentAnswers[index])
-    // Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
+// Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
         nextQuestion()
 }
 
     @IBAction func ImageButtonPressed(_ sender: UIButton) {
         let currentAnswers = questions[questionIndex].answers
         
-        // Geeft aan welke button de actie aangeroepen heeft. Zo kan de button die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
+// Geeft aan welke button de actie aangeroepen heeft. Zo kan de button die gekozen is gekoppeld worden aan het antwoord van de gebruiker, het antwoord kan worden opgeslagen om later het resultaat van de quiz te berekenen.
         switch sender {
         case singleImage1:
             answersChosen.append(currentAnswers[3])
@@ -264,19 +264,19 @@ class QuestionViewController: UIViewController {
         default:
             break
         }
-        // Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
+// Nadat het antwoord is opgegeven wordt de volgende vraag aangeroepen.
         nextQuestion()
     }
 
     
     func nextQuestion() {
-        // QuestionIndex telt er 1 bij op nadat nextQuestion weer is aangeroepen, zo wordt bijgehouden bij welke vraag de gebruiker is.
+// QuestionIndex telt er 1 bij op nadat nextQuestion weer is aangeroepen, zo wordt bijgehouden bij welke vraag de gebruiker is.
         questionIndex += 1
     
         
         if questionIndex < questions.count {
             updateUI()
-        // Als de questionIndex groter is dan het aantal vragen wordt de Segue uitgevoerd om naar de ResultsViewController te gaan.
+// Als de questionIndex groter is dan het aantal vragen wordt de Segue uitgevoerd om naar de ResultsViewController te gaan.
         } else {
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
         }
@@ -285,7 +285,7 @@ class QuestionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
         if segue.identifier == "ResultsSegue" {
-            // AnswerChosen wordt meegegeven aan ResultsViewController met de juiste antwoorden van de gebruiker. 
+// AnswerChosen wordt meegegeven aan ResultsViewController met de juiste antwoorden van de gebruiker. 
             let resultsViewController = segue.destination as!
             ResultsViewController
             resultsViewController.responses = answersChosen

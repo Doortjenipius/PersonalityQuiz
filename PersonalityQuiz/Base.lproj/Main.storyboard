@@ -26,7 +26,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Which meal are you?">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.34407444211427912" green="0.78314513226398819" blue="0.85812579314720816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="NSColor" red="0.34509803921568627" green="0.78431372549019607" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="37" name="Futura-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-694" y="18"/>
+            <point key="canvasLocation" x="-694.20289855072474" y="17.410714285714285"/>
         </scene>
         <!--Results -->
         <scene sceneID="A00-Bo-tNM">
