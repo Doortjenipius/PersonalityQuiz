@@ -27,10 +27,10 @@ struct Answer {
 }
 
 enum Mealtype: String {
-// de 4 cases waar tussen kan worden gekozen.
+    // de 4 cases waar tussen kan worden gekozen.
     case burger = "🍔", taco = "🌮", salad = "🥗", pizza = "🍕"
-
-// variable met switch statement. Hij switcht tussen de 4 opties. De juiste data voor de juiste uitkomst verschijnt in de laatste view.
+    
+    // variable met switch statement. Hij switcht tussen de 4 opties. De juiste data voor de juiste uitkomst verschijnt in de laatste view.
     var definition: String {
         switch self {
         case .burger:
